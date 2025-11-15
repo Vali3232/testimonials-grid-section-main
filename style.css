@@ -22,10 +22,10 @@
     --photo-whidth: 5rem;
 
     /* Font Sisez*/
-    --h2: 1.5rem;
-    --subtitle: 1.4rem;
-    --h3: 2.2rem;
-    --p: 1.6rem;
+    --h2: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+    --subtitle: clamp(1.4rem, 1.114rem + 0.762vw, 1.8rem);
+    --h3: clamp(2.2rem, 1.914rem + 0.762vw, 2.6rem);
+    --p: clamp(1.6rem, 1.314rem + 0.762vw, 2rem);
 
     /* Font Weights*/
     --fw-500: 500;
@@ -41,9 +41,10 @@ html{
 /* Testimonials*/
 
 .testimonials{
-    margin: var(--margin-block) var(--margin) ;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: var(--grid-gap);
+    margin: var(--margin-block) var(--margin);
 }
 
 .testimonials > * {
@@ -61,7 +62,7 @@ html{
 .container img{
     border: 4px solid var(--primary-300);
     border-radius: 50rem;
-    width: var(--photo-whidth)
+    width: var(--photo-whidth);
 }
 
 .title h2{
@@ -96,11 +97,13 @@ html{
 .col1{
     background-color: var(--primary-500);
     color: var(--neutral-0);
+    
 }
 
 .col2{
     background-color: var(--neutral-500);
     color: var(--neutral-0);
+    
 }
 
 .col2 img{
@@ -110,6 +113,7 @@ html{
 .col3{
     background-color: var(--neutral-0);
     color: var(--neutral-400);
+    
 }
 
 .col3 img{
@@ -119,11 +123,13 @@ html{
 .col4{
     background-color: var(--primary-700);
     color: var(--neutral-0);
+    
 }
 
 .col5{
     background-color: var(--neutral-0);
     color: var(--neutral-400);
+  
 }
 
 .col5 img{
@@ -145,4 +151,42 @@ html{
 .attribution a:hover{
     color: var(--neutral-500);
     text-decoration: underline;
+}
+
+/* Media Querys*/
+@media (min-width: 56rem) {
+    
+    
+
+    .testimonials{
+        display: grid;
+        grid-template-areas: 
+        "col1 col1 col4"
+        "col5 col3 col4"
+        "col5 col2 col2";
+    }
+    
+    .testimonials > * {
+        
+    }
+
+.col1 {
+        grid-area: col1;
+    }
+
+    .col2 {
+        grid-area: col2;
+    }
+
+    .col3 {
+        grid-area: col3;
+    }
+
+    .col4 {
+        grid-area: col4;
+    }
+
+    .col5 {
+        grid-area: col5;
+    }
 }
