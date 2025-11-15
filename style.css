@@ -1,0 +1,148 @@
+:root{
+    /*Colors*/
+    --primary-50: hsl(260, 100%, 95%);
+    --primary-300: hsl(264, 82%, 80%);
+    --primary-500: hsl(263, 55%, 52%);
+    --primary-700: hsl(219, 29%, 14%);
+
+    --neutral-0: hsl(0, 0%, 100%);
+    --neutral-100: hsl(214, 17%, 92%);
+    --neutral-200: hsl(0, 0%, 81%);
+    --neutral-400: hsl(224, 10%, 45%);
+    --neutral-500: hsl(217, 19%, 35%);
+    --neutral-900: hsl(0, 0%, 7%);
+
+    /* Sisez */
+    --margin: 2.5rem;
+    --margin-block: 5rem;
+    --padding: 2.5rem;
+    --padding-block: 2rem;
+    --gap: 1rem;
+    --grid-gap: 2.5rem;
+    --photo-whidth: 5rem;
+
+    /* Font Sisez*/
+    --h2: 1.5rem;
+    --subtitle: 1.4rem;
+    --h3: 2.2rem;
+    --p: 1.6rem;
+
+    /* Font Weights*/
+    --fw-500: 500;
+    --fw-600: 600;
+}
+
+html{
+    background-color: var(--neutral-100);
+    font-size: 62.5%;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+/* Testimonials*/
+
+.testimonials{
+    margin: var(--margin-block) var(--margin) ;
+    display: grid;
+    gap: var(--grid-gap);
+}
+
+.testimonials > * {
+    padding: var(--padding);
+    border-radius: 7px;
+}
+
+/* Portraits & Names */ 
+
+.container{
+    display: flex;
+    gap: var(--gap);
+}
+
+.container img{
+    border: 4px solid var(--primary-300);
+    border-radius: 50rem;
+    width: var(--photo-whidth)
+}
+
+.title h2{
+    font-size: var(--h2);
+    font-weight: var(--fw-600);
+}
+
+.title .subtitle{
+    font-size: var(--subtitle);
+}
+
+.title{
+    align-content: center;
+}
+
+/* H3's & Paragraphs */
+
+.testimonials h3{
+    font-size: var(--h3);
+    font-weight: var(--fw-600);
+    padding-block: var(--padding-block);
+}
+
+.testimonials p{
+    font-size: var(--p);
+}
+
+
+
+/* Article Colums */
+
+.col1{
+    background-color: var(--primary-500);
+    color: var(--neutral-0);
+}
+
+.col2{
+    background-color: var(--neutral-500);
+    color: var(--neutral-0);
+}
+
+.col2 img{
+    border-color: var(--neutral-0)
+}
+
+.col3{
+    background-color: var(--neutral-0);
+    color: var(--neutral-400);
+}
+
+.col3 img{
+    border-color: var(--neutral-0);
+}
+
+.col4{
+    background-color: var(--primary-700);
+    color: var(--neutral-0);
+}
+
+.col5{
+    background-color: var(--neutral-0);
+    color: var(--neutral-400);
+}
+
+.col5 img{
+    border-color: var(--neutral-0);
+}
+
+.attribution{
+    text-align: center;
+    font-size: var(--h3);
+    margin-inline: var(--margin);
+    color: var(--neutral-400);
+}
+
+.attribution a{
+    font-weight: var(--fw-600);
+    cursor: pointer;
+}
+
+.attribution a:hover{
+    color: var(--neutral-500);
+    text-decoration: underline;
+}
