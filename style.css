@@ -15,11 +15,14 @@
     /* Sisez */
     --margin: 2.5rem;
     --margin-block: 5rem;
+    --margin-col1: 8rem;
+    --margin2-col1: 5rem;
     --padding: 2.5rem;
     --padding-block: 2rem;
     --gap: 1rem;
     --grid-gap: 2.5rem;
     --photo-whidth: 5rem;
+    --background-col1: 13rem;
 
     /* Font Sisez*/
     --h2: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
@@ -41,10 +44,17 @@ html{
 /* Testimonials*/
 
 .testimonials{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas:
+            "col1"
+            "col2"
+            "col3"
+            "col4"
+            "col5";
     gap: var(--grid-gap);
-    margin: var(--margin-block) var(--margin);
+    align-items: center;
+    max-width: 30rem;
+    margin: var(--margin-block) auto;
 }
 
 .testimonials > * {
@@ -139,7 +149,7 @@ html{
 .attribution{
     text-align: center;
     font-size: var(--h3);
-    margin-inline: var(--margin);
+    margin: var(--margin);
     color: var(--neutral-400);
 }
 
@@ -153,40 +163,80 @@ html{
     text-decoration: underline;
 }
 
-/* Media Querys*/
-@media (min-width: 56rem) {
-    
-    
-
-    .testimonials{
-        display: grid;
-        grid-template-areas: 
-        "col1 col1 col4"
-        "col5 col3 col4"
-        "col5 col2 col2";
-    }
-    
-    .testimonials > * {
-        
-    }
+.jig-saw{
+    padding-block-start: var(--padding);
+}
 
 .col1 {
         grid-area: col1;
-    }
+        }
 
     .col2 {
         grid-area: col2;
-    }
+        }
 
     .col3 {
         grid-area: col3;
-    }
+        }
 
     .col4 {
         grid-area: col4;
-    }
+        }
 
     .col5 {
         grid-area: col5;
+        }
+
+
+/* Media Querys*/
+
+@media (min-width: 48rem) {
+
+    .testimonials {
+        margin: var(--margin-block) auto;
+        align-items: stretch;
+        display: grid;
+        grid-template-areas:
+            "col1 col4"
+            "col3 col2"
+            "col5 col5";
+        max-width: 80%;
     }
+}
+
+@media (min-width: 58rem) {
+    
+    .testimonials {
+        grid-template-areas:
+        "col1 col1 col2"
+        "col3 col4 col4"
+        "col5 col5 col5";
+    }
+
+    .col1{
+        background-image: url(images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: top right var(--margin2-col1);
+        background-size: var(--background-col1);
+    }
+}
+    
+@media (min-width: 80rem) {
+
+    .testimonials {
+        grid-template-areas:
+        "col1 col1 col2 col5"
+        "col3 col4 col4 col5";
+        
+        max-width: 1500px;
+        margin: var(--margin-block) auto;
+    }
+
+    .col1{
+        background-image: url(images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: top right var(--margin-col1);
+        background-size: var(--background-col1);
+    }
+    
 }
